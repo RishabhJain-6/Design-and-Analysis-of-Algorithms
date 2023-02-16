@@ -21,7 +21,7 @@ public class RadixSort {
 
 	public static void radixSort(int[] A) {
 		int max = maxm(A);
-		for (int i = 1; max / i > 0; i++) {
+		for (int i = 1; max / i > 0; i *= 10) {
 			countingSort(A, i);
 		}
 	}
