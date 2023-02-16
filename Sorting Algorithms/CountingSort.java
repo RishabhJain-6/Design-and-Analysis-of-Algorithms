@@ -24,9 +24,7 @@ public class CountingSort {
 		int k = maxm(A);
 		int[] ans = new int[n];
 		int[] count = new int[k + 1];
-		for (int i = 0; i <= k; i++) {
-			count[i] = 0;
-		}
+		Arrays.fill(count,0);
 		for (int i = 0; i < n; i++) {
 			count[A[i]]++;
 		}
