@@ -66,12 +66,12 @@ class WIS {
 		}
 
 		System.out.print("Jobs involved in the maximum profit: \n");
-		int t_progit = 0;
+		int t_profit = 0;
 		for (Integer i : tasks.get(index)) {
 			System.out.println(jobs.get(i));
-			t_progit += jobs.get(i).weight;
+			t_profit += jobs.get(i).weight;
 		}
-		System.out.println("\nMaximum Profir: " + t_progit);
+		System.out.println("\nMaximum Profit: " + t_profit);
 	}
 
 	public static void main(String[] args) {
