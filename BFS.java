@@ -4,18 +4,18 @@ import java.util.Queue;
 
 public class Graph {
 	private int V;
-	private LinkedList<Integer> adj[];
+	private LinkedList<Integer> nbrs[];
 
 	Graph(int v) {
 		V = v;
-		adj = new LinkedList[V];
+		nbrs = new LinkedList[V];
 		for (int i = 0; i < V; i++) {
-			adj[i] = new LinkedList<Integer>();
+			nbrs[i] = new LinkedList<Integer>();
 		}
 	}
 
 	void addEdge(int src, int dest) {
-		adj[src].add(dest);
+		nbrs[src].add(dest);
 	}
 
 	void BSF(int src) {
@@ -32,7 +32,7 @@ public class Graph {
 		while (!Q.isEmpty()) {
 			int u = Q.poll();
 			System.out.println("Node: " + u + " Parent: " + parent[u] + " Discovery Time: " + discoverTime[u]);
-			Iterator<Integer> i = adj[u].listIterator();
+			Iterator<Integer> i = nbrs[u].listIterator();
 			while (i.hasNext()) {
 				int v = i.next();
 				if (!visited[v]) {
@@ -46,19 +46,19 @@ public class Graph {
 	}
 
 	public static void main(String[] args) {
-		Graph g = new Graph(8);
+		Graph G = new Graph(8);
 
-		g.addEdge(1, 3);
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(2, 4);
-		g.addEdge(2, 5);
-		g.addEdge(4, 5);
-		g.addEdge(4, 6);
-		g.addEdge(5, 6);
-		g.addEdge(5, 7);
-		g.addEdge(6, 7);
+		G.addEdge(1, 3);
+		G.addEdge(0, 1);
+		G.addEdge(0, 2);
+		G.addEdge(2, 4);
+		G.addEdge(2, 5);
+		G.addEdge(4, 5);
+		G.addEdge(4, 6);
+		G.addEdge(5, 6);
+		G.addEdge(5, 7);
+		G.addEdge(6, 7);
 
-		g.BSF(0);
+		G.BSF(0);
 	}
 }
