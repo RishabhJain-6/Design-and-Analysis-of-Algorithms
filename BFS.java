@@ -18,7 +18,7 @@ public class Graph {
 		nbrs[src].add(dest);
 	}
 
-	void BSF(int src) {
+	void BFS(int src) {
 		boolean visited[] = new boolean[V];
 		Queue<Integer> Q = new LinkedList<Integer>();
 		visited[src] = true;
@@ -59,6 +59,6 @@ public class Graph {
 		G.addEdge(5, 7);
 		G.addEdge(6, 7);
 
-		G.BSF(0);
+		G.BFS(0);
 	}
 }
